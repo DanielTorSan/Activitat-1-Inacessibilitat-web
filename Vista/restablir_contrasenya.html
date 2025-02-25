@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablir Contrasenya</title>
+    <link rel="stylesheet" href="../Estils/estils_forms.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="login-container">
+        <h2>Restablir Contrasenya</h2>
+        <form action="restablir.php" method="POST">
+            <div class="input-group">
+                <label for="new_password">Nova Contrasenya</label>
+                <input type="password" id="new_password" name="new_password" placeholder="Nova Contrasenya" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm_password">Confirmar Contrasenya</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmar Contrasenya" required>
+            </div>
+            <a href="../index.html" class="register-button">Restablir</a>
+        </form>
+        <div class="register-link">
+            <p><a href="../index.html">Tornar a l'inici</a></p>
+        </div>
+    </div>
+</body>
+</html>

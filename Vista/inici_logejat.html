@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peixos</title>
+    <link rel="stylesheet" href="../Estils/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body style="background-image: url('../Estils/img/fons_mari.jpg'); background-size: cover; background-attachment: fixed;">
+    <div class="header bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+        <h1 class="d-flex align-items-center">Peixos</h1>
+        <div class="user-actions d-flex align-items-center position-relative">
+            <img src="../Estils/img/pez-payaso.jpg" alt="Avatar" class="user-avatar">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle text-white" id="dropdownMenuButton">Benvingut, usuari 1</button>
+                <div class="dropdown-menu " id="dropdownMenu">
+                    <a class="dropdown-item" href="editar_perfil.html">Editar Perfil</a>
+                    <a class="dropdown-item" href="../index.html">Tancar sessió</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content container mt-4 p-4 bg-white rounded shadow text-center">
+        <h2 class="title">Llista d'articles de Peixos</h2>
+        <div class="d-flex justify-content-start mb-3">
+            <button class="btn btn-primary open-modal" id="addArticleBtnTop">Inserir Article</button>
+        </div>
+        <div class="sort mb-4 d-flex justify-content-center align-items-center">
+            <label for="order" class="mr-2">Ordenat per:</label>
+            <button class="btn btn-light">data</button>
+            <input type="text" class="form-control ml-3" style="width: 200px;" placeholder="Cercar títol">
+            <button class="btn btn-primary ml-2">Cercar</button>
+        </div>
+
+        <div class="cards d-flex justify-content-center flex-wrap">
+            <div class="card m-2" style="width: 18rem; background-color: #f1faff;">
+                <img src="../Estils/img/pez-globo.jpg" class="card-img-top" alt="Peix Globus inflat mostrant les seves espines" title="Peix Globus - Un peix que s'infla quan se sent amenaçat" data-toggle="tooltip" data-placement="top">
+                <div class="card-body text-center">
+                    <h2 class="card-title">Peix Globus</h2>
+                    <p class="card-text">Es un peix molt bonic, es un peix molt bonic</p>
+                    <button class="btn btn-edit mr-2 open-modal-modify" aria-label="Editar article del Peix Globus" title="Editar article del Peix Globus" data-toggle="tooltip" data-placement="top">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-danger" aria-label="Eliminar article del Peix Globus" title="Eliminar article del Peix Globus" data-toggle="tooltip" data-placement="top">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card m-2 border-primary" style="width: 18rem; background-color: #f1faff;">
+                <img src="../Estils/img/pez-ballesta.jpg" class="card-img-top" alt="Peix Colorit">
+                <div class="card-body text-center">
+                    <h2 class="card-title">Peix Colorit</h2>
+                    <p class="card-text">Es un peix molt bonic, es un peix molt bonic</p>
+                </div>
+            </div>
+            <div class="card m-2" style="width: 18rem; background-color: #f1faff;">
+                <img src="../Estils/img/pez-payaso.jpg" class="card-img-top" alt="Nemo">
+                <div class="card-body text-center">
+                    <h2 class="card-title">Nemo</h2>
+                    <p class="card-text">Es un peix molt bonic, es un peix molt bonic</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-start mt-3">
+            <button class="btn btn-primary open-modal" id="addArticleBtnBottom">Inserir Article</button>
+        </div>
+
+        <div class="pagination mt-4">
+            <button class="btn btn-primary">1</button>
+            <button class="btn btn-light">2</button>
+            <button class="btn btn-primary active">3</button>
+            <button class="btn btn-light">4</button>
+            <button class="btn btn-light">8</button>
+        </div>
+    </div>
+
+    <!-- "Inserir Article" -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Inserir Article</h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/685/685655.png" alt="Upload">
+            <input type="text" placeholder="Títol">
+            <textarea placeholder="Cos"></textarea>
+            <button class="btn btn-primary">Inserir</button>
+            <a href="#" class="d-block mt-2 text-primary">Tornar a l'inici</a>
+        </div>
+    </div>
+
+    <!-- "Modificar" -->
+    <div id="modalOverlayModify" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal-modify">&times;</span>
+            <h2>Peix Globus</h2>
+            <img src="../Estils/img/pez-globo.jpg" alt="Peix Globus">
+            <input type="text" placeholder="Peix Globus">
+            <textarea placeholder="Cos">Es un peix molt bonic, es un peix molt bonic, Es un peix molt bonic, es un peix molt bonic</textarea>
+            <button class="btn btn-primary">Modificar</button>
+            <a href="#" class="d-block mt-2 text-primary">Tornar a l'inici</a>
+        </div>
+    </div>
+
+    <script src="../model/inici_logejat.js"></script>
+</body>
+</html>

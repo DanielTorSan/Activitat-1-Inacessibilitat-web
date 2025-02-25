@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar-se</title>
+    <link rel="stylesheet" href="../Estils/estils_forms.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="login-container">
+        <h2>Registrar-se</h2>
+        <form action="registre.php" method="POST">
+            <div class="input-group">
+                <label for="username">Nom d'usuari</label>
+                <input type="text" id="username" name="username" placeholder="Nom d'usuari" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Correu electrònic</label>
+                <input type="email" id="email" name="email" placeholder="Correu electrònic" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Contrasenya</label>
+                <input type="password" id="password" name="password" placeholder="Contrasenya" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm_password">Confirmar Contrasenya</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmar Contrasenya" required>
+            </div>
+            <a href="inici_logejat.html" class="register-button">Registrar-se</a>
+            <a href="login.html" class="login-button">Iniciar Sessió</a>
+        </form>
+        <div class="register-link">
+            <p><a href="../index.html">Tornar a l'inici</a></p>
+        </div>
+    </div>
+</body>
+</html>

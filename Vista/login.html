@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sessió</title>
+    <link rel="stylesheet" href="../Estils/estils_forms.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="login-container">
+        <h2>Iniciar Sessió</h2>
+        <form action="login.php" method="POST">
+            <div class="input-group">
+                <label for="username">Nom d'usuari</label>
+                <input type="text" id="username" name="username" placeholder="Nom d'usuari" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Contrasenya</label>
+                <input type="password" id="password" name="password" placeholder="Contrasenya" required>
+            </div>
+            <div class="options">
+                <a href="recuperar_contrasenya.html" class="forgot-password">Has oblidat la contrasenya?</a>
+                <label class="remember-me">
+                    <input type="checkbox" name="remember_me"> Recorda'm
+                </label>
+            </div>
+            <a href="inici_logejat.html" class="login-button">Iniciar Sessió</a>
+            <a href="registre.html" class="register-button">Registrar-se</a>
+        </form>
+        <div class="register-link">
+            <p><a href="../index.html">Tornar a l'Inici</a></p>
+        </div>
+    </div>
+</body>
+</html>

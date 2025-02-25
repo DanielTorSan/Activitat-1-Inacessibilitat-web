@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="../Estils/estils_EditarP.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="login-container">
+        <h2>Editar Perfil</h2>
+        <form action="editar_perfil.php" method="POST" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="avatar">Canviar imatge de perfil:</label>
+            </div>
+            <div class="profile-picture">
+                <img src="../Estils/img/pez-payaso.jpg" alt="Imatge de perfil" id="profile-img">
+            </div>
+            <div class="input-group">
+                <label for="username">Nom d'usuari</label>
+                <input type="text" name="username" id="username" placeholder="Usuari 1" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Correu electrònic</label>
+                <input type="email" name="email" id="email" placeholder="d.torres2@sapalomera.cat" required>
+            </div>
+            <a href="#" class="login-button" id="changePasswordBtn">Nova Contrasenya</a>
+            <a href="inici_logejat.html" class="register-button">Guardar Canvis</a>
+        </form>
+        <div class="register-link">
+            <p><a href="inici_logejat.html">Tornar a l'inici</a></p>
+        </div>
+    </div>
+
+    <!-- "Canviar Contrasenya" -->
+    <div id="modalOverlayPassword" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal-password">&times;</span>
+            <h2>Contrasenya</h2>
+            <form action="canviar_contrasenya.php" method="POST">
+                <div class="input-group">
+                    <label for="current-password">Contrasenya Actual</label>
+                    <input type="password" name="current-password" id="current-password" required>
+                </div>
+                <div class="input-group">
+                    <label for="new-password">Nova Contrasenya</label>
+                    <input type="password" name="new-password" id="new-password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirmar Nova Contrasenya</label>
+                    <input type="password" name="confirm-password" id="confirm-password" required>
+                </div>
+                <button type="submit" class="login-button">Guardar Canvis</button>
+            </form>
+            <div class="register-link">
+                <p><a href="inici_logejat.html">Tornar a l'inici</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../model/editar_perfil.js"></script>
+</body>
+</html>

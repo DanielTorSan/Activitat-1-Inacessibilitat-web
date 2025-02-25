@@ -1,0 +1,158 @@
+body {
+    background-image: url("../Estils/img/fons_mari.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: calc(100% - 20px); /* Ajustar el ancho del input */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 auto; 
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #007bff;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Millorem el contrast dels botons */
+.login-button,
+.register-button {
+    background-color: #004085; /* Blau més fosc per millor contrast */
+    color: #ffffff; /* Blanc pur */
+    display: inline-block;
+    width: calc(100% - 20px); 
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600; /* Text més gruixut */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Ombra per millorar llegibilitat */
+    min-height: 44px; /* Alçada mínima per accessibilitat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estats hover amb contrast millorat */
+.login-button:hover,
+.register-button:hover {
+    background-color: #002752; /* Encara més fosc en hover */
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estat actiu */
+.login-button:active,
+.register-button:active {
+    background-color: #001f3f;
+    transform: translateY(1px);
+}
+
+.register-link {
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos del modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    color: #007bff;
+}
+
+.close-modal-password {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}

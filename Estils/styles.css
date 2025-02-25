@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url("/Estils/img/fons_mari.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    position: relative;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -1;
+}
+
+/* Header with improved contrast */
+.header {
+    background-color: #003366; /* Darker blue for better contrast */
+    color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.header h1 {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.header h1::before {
+    content: '🐟';
+    margin-right: 10px;
+}
+
+.user-actions a {
+    color: #000000;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.user-actions a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+}
+
+.content {
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px); 
+}
+
+.title {
+    font-size: 2.5em;
+    color: #004085;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sort label, .sort select, .sort input, .sort button {
+    margin-right: 10px;
+}
+
+.sort input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sort button {
+    padding: 5px 10px;
+    background-color: #004085;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sort button:hover {
+    background-color: #0056b3;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 235px;
+    height: 392px;
+    background-color: #f1faff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #004085;
+}
+
+.card img {
+    width: 90%;
+    height: 135px;
+    object-fit: cover;
+    border-bottom: 2px solid #004085;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    color: #004085;
+    margin: 15px 0 5px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 1.1em;
+    color: #333;
+    margin: 0 15px 15px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Unified button styles */
+.btn-primary,
+.card .btn-edit,
+#addArticleBtnTop,
+#addArticleBtnBottom {
+    background-color: #004085;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Unified hover states */
+.btn-primary:hover,
+.card .btn-edit:hover,
+#addArticleBtnTop:hover,
+#addArticleBtnBottom:hover {
+    background-color: #002752;
+    color: #ffffff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination span {
+    margin: 0 5px;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 1px solid #004085;
+    border-radius: 5px;
+    color: #004085;
+    cursor: pointer;
+}
+
+.pagination span.active {
+    background-color: #004085;
+    color: white;
+}
+
+.pagination span:hover {
+    background-color: #002752;
+    color: white;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    color: #004085;
+}
+
+.close-modal, .close-modal-modify {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-content input,
+.modal-content button,
+.modal-content textarea {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.modal-content img {
+    width: 200px; 
+    margin: 10px auto;
+    display: block;
+    border-radius: 10px;
+}
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Millorem el contrast del botó light */
+.btn-light {
+    background-color: #e9ecef;
+    color: #000000; /* Text negre per màxim contrast */
+    border: 1px solid #6c757d;
+    font-weight: 600; /* Text més gruixut */
+}
+
+.btn-light:hover {
+    background-color: #dae0e5;
+    color: #000000;
+    border-color: #495057;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #004085; /* Blau fosc per millor contrast */
+    margin-bottom: 0.75rem;
+}
+
+/* Search button specific styles */
+button.btn-primary.ml-2 {
+    background-color: #004085; /* Even darker blue */
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Hover states */
+.btn-primary:hover,
+button.btn-primary.ml-2:hover {
+    background-color: #002752;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Improve button visibility */
+#addArticleBtnTop,
+#addArticleBtnBottom {
+    background-color: #004085;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+}
+
+#addArticleBtnTop:hover,
+#addArticleBtnBottom:hover {
+    background-color: #002752;
+    border-color: #ffffff;
+}
+
+/* Estil general per tots els botons primaris */
+.btn-primary,
+button.btn-primary.ml-2,
+#addArticleBtnTop,
+#addArticleBtnBottom {
+    background-color: #004085;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+}
+
+/* Unifiquem els estats hover */
+.btn-primary:hover,
+button.btn-primary.ml-2:hover,
+#addArticleBtnTop:hover,
+#addArticleBtnBottom:hover,
+.card .btn-edit:hover {
+    background-color: #002752;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Estilos para los tooltips */
+.tooltip {
+    position: absolute;
+    z-index: 1070;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 8px;
+    color: #ffffff;
+    background-color: #004085;
+    border-radius: 4px;
+}
+
+/* Dropdown button with better contrast */
+.dropdown .dropdown-toggle {
+    background-color: #003366; /* Match header color */
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Hover state for dropdown button */
+.dropdown .dropdown-toggle:hover {
+    background-color: #002347; /* Even darker on hover */
+    border-color: #ffffff;
+}
+
+/* Dropdown menu with improved visibility */
+.dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #003366;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+    color: #003366;
+    font-weight: 500;
+}
+
+.dropdown-item:hover {
+    background-color: #003366;
+    color: #ffffff;
+}
